@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MKW Solutions & Services Hub | PNG</title>
+
+    <meta
+        name="description"
+        content="MKW Solutions & Services Hub provides travel booking, healthcare solutions, and business and accounting services across Papua New Guinea."
+    >
+
+    <style>
+        /* ================================
+           MKW SOLUTIONS & SERVICES HUB
+           MOBILE-FIRST WEBSITE v1.0
+        ================================= */
+
+        :root {
+            --green-dark: #064b36;
+            --green: #0a8f5b;
+            --green-light: #18b76b;
+            --green-soft: #eaf8f1;
+
+            --blue: #0b63ce;
+            --orange: #e98a00;
+
+            --white: #ffffff;
+            --black: #172033;
+            --gray: #64748b;
+            --light: #f6f8fb;
+            --border: #dfe7e3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: min(1120px, 92%);
+            margin: auto;
+            padding: 14px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--green);
+        }
+
+        .brand-text h1 {
+            font-size: 1.05rem;
+            color: var(--green-dark);
+            line-height: 1.1;
+        }
+
+        .brand-text p {
+            font-size: 0.72rem;
+            color: var(--gray);
+            line-height: 1.2;
+            margin-top: 3px;
+        }
+
+        .menu-btn {
+            background: var(--green-dark);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 9px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        nav {
+            display: none;
+            width: 100%;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            padding: 10px 4%;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px 0;
+            color: var(--green-dark);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        nav.open {
+            display: block;
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(4, 75, 54, 0.88),
+                    rgba(4, 75, 54, 0.78)
+                ),
+                url("images/hero.jpg") center/cover no-repeat;
+
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            width: min(900px, 100%);
+            margin: auto;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 760px;
+            margin: 0 auto 25px;
+        }
+
+        .locations {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 28px;
+        }
+
+        .location {
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 7px 13px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 20px;
+            border-radius: 9px;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s ease;
+        }
+
+        .btn-green {
+            background: var(--green-light);
+            color: var(--white);
+        }
+
+        .btn-green:hover {
+            transform: translateY(-2px);
+            background: #11995a;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--green-dark);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ================================
+           GENERAL SECTIONS
+        ================================= */
+
+        section {
+            padding: 65px 20px;
+        }
+
+        .section-container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: var(--green-dark);
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* ================================
+           ABOUT
+        ================================= */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-box {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-box h3 {
+            color: var(--green-dark);
+            margin-bottom: 10px;
+        }
+
+        /* ================================
+           THREE PILLARS
+        ================================= */
+
+        .services-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card.travel {
+            border-top: 5px solid var(--blue);
+        }
+
+        .service-card.health {
+            border-top: 5px solid var(--green);
+        }
+
+        .service-card.business {
+            border-top: 5px solid var(--orange);
+        }
+
+        .service-icon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: var(--green-dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* ================================
+           VISION / MISSION / OBJECTIVES
+        ================================= */
+
+        .dark-section {
+            background: var(--green-dark);
+            color: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .info-card h3 {
+            color: #a8f0c8;
+            margin-bottom: 12px;
+        }
+
+        .info-card p,
+        .info-card li {
+            color: #f2f7f4;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+        }
+
+        /* ================================
+           VALUES
+        ================================= */
+
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .value {
+            background: var(--green-soft);
+            color: var(--green-dark);
+            border-radius: 50px;
+            padding: 9px 15px;
+            font-weight: bold;
+        }
+
+        /* ================================
+           CONTACT
+        ================================= */
+
+        .contact-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            color: var(--green-dark);
+        }
+
+        .whatsapp {
+            display: inline-block;
+            margin-top: 15px;
+            background: #22c55e;
+            color: var(--white);
+            padding: 13px 20px;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #101b20;
+            color: var(--white);
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ================================
+           TABLET + DESKTOP
+        ================================= */
+
+        @media (min-width: 768px) {
+
+            .menu-btn {
+                display: none;
+            }
+
+            .nav-container {
+                flex-wrap: nowrap;
+            }
+
+            nav {
+                display: flex;
+                width: auto;
+                background: transparent;
+                border: none;
+                padding: 0;
+                gap: 25px;
+                align-items: center;
+            }
+
+            nav a {
+                padding: 0;
+            }
+
+            .hero {
+                padding: 105px 30px;
+            }
+
+            .hero h2 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1000px) {
+
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+        <div class="nav-container">
+
+            <div class="brand">
+                <img src="images/logo.png" alt="MKW Solutions & Services Hub logo">
+
+                <div class="brand-text">
+                    <h1>MKW Solutions & Services Hub</h1>
+                    <p>Have The Courage To Challenge Your Life.<br>
+                    Never Limit Yourself.</p>
+                </div>
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <nav id="mainNav">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#vision">Our Vision</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p><strong>WELCOME TO</strong></p>
+
+            <h2>
+                MKW Solutions & Services Hub
+            </h2>
+
+            <p>
+                A PNG-based consultancy company committed to providing
+                professional, genuine, and accessible services to
+                individuals, families, and SMEs across Papua New Guinea.
+            </p>
+
+            <div class="locations">
+                <span class="location">📍 Lae</span>
+                <span class="location">📍 Port Moresby</span>
+                <span class="location">📍 Manus</span>
+                <span class="location">📍 Kimbe</span>
+                <span class="location">📍 Mt Hagen</span>
+            </div>
+
+            <a href="#services" class="btn btn-green">
+                Explore Our Services
+            </a>
+
+            <a href="#contact" class="btn btn-white">
+                Contact Us
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================================
+         ABOUT
+    ================================= -->
+
+    <section class="about" id="about">
+
+        <div class="section-container">
+
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>
+                    Professional. Genuine. People First.
+                </p>
+            </div>
+
+            <div class="about-box">
+
+                <h3>MKW Solutions & Services Hub</h3>
+
+                <p>
+                    MKW Solutions & Services Hub is a PNG-based consultancy
+                    company committed to providing professional, genuine,
+                    and accessible services to individuals, families,
+                    and SMEs across Papua New Guinea.
+                </p>
+
+                <br>
+
+                <p>
+                    Founded in Morobe Province, MKW was built on three
+                    core pillars to support growth, health, and opportunity
+                    for Papua New Guineans.
+                </p>
+
+                <br>
+
+                <p>
+                    We currently serve clients in Lae, Port Moresby,
+                    Manus, Kimbe and Mt Hagen, with plans to expand
+                    nationwide.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================
+         THREE CORE PILLARS
+    ================================= -->
+
+    <section id="services">
+
+        <div class="section-container">
+
+            <div class="section-title">
+                <h2>Our 3 Core Pillars</h2>
+                <p>
+                    Services designed to help people travel,
+                    stay well, and build successful businesses.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Travel -->
+
+                <div class="service-card travel">
+
+                    <div class="service-icon">✈️</div>
+
+                    <h3>1. Travel Booking Agent</h3>
+
+                    <p>
+                        Domestic and international flight bookings,
+                        tour packages, accommodation, and travel
+                        consultation.
+                    </p>
+
+                    <p>
+                        We aim to make travel simple, affordable,
+                        and less stressful for business and leisure clients.
+                    </p>
+
+                </div>
+
+                <!-- Healthcare -->
+
+                <div class="service-card health">
+
+                    <div class="service-icon">❤️</div>
+
+                    <h3>2. Healthcare Solutions</h3>
+
+                    <p>
+                        Working with trusted brands and distributors
+                        to provide health and wellness products,
+                        education, and support.
+                    </p>
+
+                    <p>
+                        Our goal is to support individuals and
+                        communities in making informed wellness choices.
+                    </p>
+
+                </div>
+
+                <!-- Business -->
+
+                <div class="service-card business">
+
+                    <div class="service-icon">💼</div>
+
+                    <h3>3. Business & Accounting Services</h3>
+
+                    <p>
+                        Supporting SMEs and startups with business
+                        registration, system setup, accounting,
+                        marketing, and growth support.
+                    </p>
+
+                    <p>
+                        From idea to operation, we help clients
+                        build stronger foundations for business.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================
+         VISION / MISSION / OBJECTIVES
+    ================================= -->
+
+    <section class="dark-section" id="vision">
+
+        <div class="section-container">
+
+            <div class="section-title">
+                <h2 style="color:#ffffff;">
+                    Our Vision, Mission & Objectives
+                </h2>
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To be PNG's most trusted hub for professional
+                        services that empower people to travel,
+                        stay healthy, and build successful businesses.
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To promote genuine, reliable, and affordable
+                        services across PNG by delivering expert
+                        solutions in Travel, Healthcare, and Business.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        We are committed to integrity, customer care,
+                        and helping every client achieve their goals
+                        without limits.
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h3>Our Objectives</h3>
+
+                    <ul>
+                        <li>Deliver professional services.</li>
+                        <li>Support SME growth.</li>
+                        <li>Improve health and wellness.</li>
+                        <li>Simplify travel.</li>
+                        <li>Build a nationwide presence.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================
+         VALUES
+    ================================= -->
+
+    <section>
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Our Values</h2>
+
+                <p>
+                    The principles that guide our work.
+                </p>
+
+            </div>
+
+            <div class="values">
+
+                <span class="value">Professionalism</span>
+                <span class="value">Integrity</span>
+                <span class="value">Customer First</span>
+                <span class="value">Growth</span>
+                <span class="value">Community</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================
+         CONTACT
+    ================================= -->
+
+    <section class="about" id="contact">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Contact Us</h2>
+
+                <p>
+                    We are ready to discuss how MKW can support you.
+                </p>
+
+            </div>
+
+            <div class="contact-box">
+
+                <div class="contact-item">
+                    <strong>Company:</strong>
+                    MKW Solutions & Services Hub
+                </div>
+
+                <div class="contact-item">
+                    <strong>Location:</strong>
+                    Lae, Morobe Province, PNG
+                </div>
+
+                <div class="contact-item">
+                    <strong>WhatsApp:</strong>
+                    +675 79536703
+                </div>
+
+                <div class="contact-item">
+                    <strong>Agent:</strong>
+                    MANUKAY
+                </div>
+
+                <div class="contact-item">
+                    <strong>Serving:</strong>
+                    Lae | Port Moresby | Manus | Kimbe | Mt Hagen
+                </div>
+
+                <a
+                    href="https://wa.me/67579536703"
+                    class="whatsapp"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    💬 Chat on WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 MKW Solutions & Services Hub.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Professional. Genuine. People First.
+        </p>
+
+        <p>
+            Proudly Papua New Guinean 🇵🇬
+        </p>
+
+    </footer>
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("mainNav");
+            nav.classList.toggle("open");
+        }
+
+        document.querySelectorAll("#mainNav a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                document.getElementById("mainNav").classList.remove("open");
+            });
+        });
+    </script>
+
+</body>
+</html>
